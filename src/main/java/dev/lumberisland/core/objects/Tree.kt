@@ -28,6 +28,6 @@ class Tree(val uuid: UUID, val root: Location, val durability: Double, val regen
     private fun destroy(){
         root.world!!.playSound(root, Sound.ENTITY_ZOMBIE_BREAK_WOODEN_DOOR, SoundCategory.BLOCKS, 1F, 1F);
         regeneration.schematic.blocks.forEach { (t, _) ->  t.block.type = Material.AIR}
-
+        regeneration.startRegen()
     }
 }
