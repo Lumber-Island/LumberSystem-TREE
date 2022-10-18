@@ -1,0 +1,67 @@
+buildscript {
+    ext.kotlin_version = '1.5.31'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+apply plugin: 'kotlin'
+
+group 'dev.lumberisland'
+version '1.0-SNAPSHOT'
+
+allprojects{
+    apply plugin: 'java-library'
+
+    java {
+        withSourcesJar()
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+repositories {
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+
+        content {
+            includeGroup 'org.bukkit'
+            includeGroup 'org.spigotmc'
+        }
+    }
+    maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url = 'https://oss.sonatype.org/content/repositories/central' }
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT'
+    implementation 'org.bukkit:bukkit:1.15.2-R0.1-SNAPSHOT'
+    implementation 'org.spigotmc:plugin-annotations:1.2.3-SNAPSHOT'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+}
+
+jar {
+    destinationDirectory.set(file('D:/glupoty/Paweł/lumberisland/plugins'))
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "16"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "16"
+    }
+}

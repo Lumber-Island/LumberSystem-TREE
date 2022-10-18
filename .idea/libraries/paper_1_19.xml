@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="paper 1.19">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../wolf/servers/rpg/libraries/net/kyori/adventure-text-serializer-plain/4.11.0/adventure-text-serializer-plain-4.11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../wolf/servers/rpg/libraries/net/kyori/adventure-text-serializer-legacy/4.11.0/adventure-text-serializer-legacy-4.11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../wolf/servers/rpg/libraries/net/kyori/adventure-text-serializer-gson/4.11.0/adventure-text-serializer-gson-4.11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../wolf/servers/rpg/libraries/net/kyori/adventure-text-minimessage/4.11.0/adventure-text-minimessage-4.11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../wolf/servers/rpg/libraries/net/kyori/adventure-key/4.11.0/adventure-key-4.11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../wolf/servers/rpg/libraries/net/kyori/adventure-api/4.11.0/adventure-api-4.11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../wolf/servers/rpg/libraries/com/mojang/authlib/3.11.49/authlib-3.11.49.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../wolf/servers/rpg/libraries/com/mojang/brigadier/1.0.18/brigadier-1.0.18.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../wolf/servers/rpg/versions/1.19.2/paper-1.19.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
