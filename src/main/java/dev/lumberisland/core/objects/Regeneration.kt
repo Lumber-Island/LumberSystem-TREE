@@ -6,7 +6,7 @@ import dev.lumberisland.core.objects.schematics.Schematic
 import java.util.concurrent.ScheduledFuture
 import java.util.concurrent.TimeUnit
 
-class Regeneration(val tree: Tree, val schematic: Schematic) {
+class Regeneration(val tree: Tree, val schematic: Schematic){
 
     private var regeneratedBlocks: List<BlockInfo> = ArrayList()
 
@@ -19,7 +19,9 @@ class Regeneration(val tree: Tree, val schematic: Schematic) {
         var cbtr = 0
 
         regenTask = Main.getInstance().scheduledExecutorService.schedule({
-
+            if(cbtr < regeneratedBlocks.size) {
+                var blockInfo = regeneratedBlocks.get(cbtr);
+            }
         }, 250, TimeUnit.MILLISECONDS)
 
     }
