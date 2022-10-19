@@ -1,6 +1,6 @@
 package dev.lumberisland.core.extends
 
-class MapExtend {
+open class MapExtend {
 
     fun <K, V> Map<K, V>.get(id: Int): Getter<K, V>?{
         var currentID = 0

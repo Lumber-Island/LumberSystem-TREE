@@ -47,12 +47,14 @@ repositories {
 dependencies {
     implementation 'org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT'
     implementation 'org.bukkit:bukkit:1.15.2-R0.1-SNAPSHOT'
-    implementation 'org.spigotmc:plugin-annotations:1.2.3-SNAPSHOT'
+    constraints {
+        implementation 'org.spigotmc:plugin-annotations:1.2.3-SNAPSHOT'
+    }
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }
 
 jar {
-    destinationDirectory.set(file('D:/glupoty/Paweł/lumberisland/plugins'))
+    destinationDirectory.set(file('D:/lumberisland/plugins'))
 }
 
 compileKotlin {

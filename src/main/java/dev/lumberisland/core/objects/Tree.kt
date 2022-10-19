@@ -8,7 +8,7 @@ import org.bukkit.SoundCategory
 import org.bukkit.inventory.ItemStack
 import java.util.*
 
-class Tree(val uuid: UUID, val root: Location, val durability: Double, val regeneration: Regeneration, val blocksToDrop: Int, val multiplier: Int) {
+class Tree(val uuid: UUID, val root: Location, private val durability: Double, val regeneration: Regeneration, var blocksToDrop: Int, var multiplier: Int) {
 
     private var current_durability: Double = durability;
 
@@ -18,7 +18,10 @@ class Tree(val uuid: UUID, val root: Location, val durability: Double, val regen
             val axeType = AxeType.getType(itemStack)
             if(axeType.id == 0) return
             current_durability -= givenDamage
-            if(current_durability <= 0) destroy()
+            if(current_durability <= 0) {
+                destroy()
+                root.world!!.playSound(root, Sound.ENTITY_ZOMBIE_BREAK_WOODEN_DOOR, SoundCategory.BLOCKS, 1F, 1F)
+            }
             else {
                 root.world!!.playSound(root, Sound.ENTITY_ZOMBIE_ATTACK_WOODEN_DOOR, SoundCategory.BLOCKS, 1F, 1F)
             }
@@ -26,7 +29,7 @@ class Tree(val uuid: UUID, val root: Location, val durability: Double, val regen
     }
 
     private fun destroy(){
-        root.world!!.playSound(root, Sound.ENTITY_ZOMBIE_BREAK_WOODEN_DOOR, SoundCategory.BLOCKS, 1F, 1F);
+        current_durability = durability
         regeneration.schematic.blocks.forEach { (t, _) ->  t.block.type = Material.AIR}
         regeneration.startRegen()
     }
