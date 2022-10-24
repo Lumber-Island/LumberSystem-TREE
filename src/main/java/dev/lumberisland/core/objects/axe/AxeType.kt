@@ -16,20 +16,24 @@ enum class AxeType(val id: Int, val damage: Double, val material: Material) {
 
     companion object {
         fun build(axeType: AxeType): ItemStack{
-            val itemStack = ItemStack(axeType.material);
+            val itemStack = ItemStack(axeType.material)
             val itemMeta = itemStack.itemMeta!!
 
             itemMeta.setCustomModelData(axeType.id)
-            itemStack.itemMeta = itemMeta;
-            return itemStack;
+            itemStack.itemMeta = itemMeta
+            return itemStack
         }
 
         fun getType(itemStack: ItemStack): AxeType{
             val id = itemStack.itemMeta!!.customModelData
             for (value in values()) {
-                if(value.id == id) return value
+                if(value.id == id) {
+
+                    return value
+                }
             }
-            return FORBIDDEN;
+            return FORBIDDEN
         }
+
     }
 }

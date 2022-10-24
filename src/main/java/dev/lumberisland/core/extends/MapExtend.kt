@@ -2,7 +2,7 @@ package dev.lumberisland.core.extends
 
 open class MapExtend {
 
-    fun <K, V> Map<K, V>.get(id: Int): Getter<K, V>?{
+    operator fun <K, V> Map<K, V>.get(id: Int): Getter<K, V>?{
         var currentID = 0
 
         var valueToGet: Getter<K, V>? = null
@@ -14,6 +14,10 @@ open class MapExtend {
         }
 
         return valueToGet
+    }
+
+    fun <K, V> Map<K, V>.getValueOrNull(id: Int): V?{
+        return get(id)?.value
     }
 
     class Getter<K, V>(val key: K, val value: V) {}
