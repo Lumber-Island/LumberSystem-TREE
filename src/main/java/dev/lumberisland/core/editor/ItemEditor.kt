@@ -29,4 +29,10 @@ class ItemEditor(val itemStack: ItemStack) {
         })
     }
 
+    fun modelData(int: Int){
+        editMeta(consumer = {
+            it.setCustomModelData(int)
+        })
+    }
+
 }
